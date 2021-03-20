@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h2{
+
+        transform: translateX();
+        transform: translateY();
+        hoặc transform : translate(50%,50%);
+    }
+     cách đặt biến giả trong thẻ khối , các thuộc tính con vẫn được thừa hưởng
+     vd:      div{
+              --height: 100%;
+              text-align: center;
+              line-height: var(--height);
+     }
+     h2{
+         line-height: var(--height);
+         position: relative;
+     }
+     h2::after{
+          position: absolute;
+          content: "";
+          border-left: 2px solid coral;
+          top: 50%;
+          left: -10px;
+          transform: translateY(-50%);
+          height: 16px;
+     }
+</style>
+<body>
+    khối nút button
+
+    
+</body>
+</html>

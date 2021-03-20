@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header_html_band</title>
+    <link rel="stylesheet" href="./icon/fontawesome-free-5.15.2-web/css/all.css">
+
+</head>
+
+<body>
+    <div id="header" class="header">
+        <ul id="header123" class="nav_header">
+            <li class="danh _1">
+                <a href="#">Home</a>
+            </li>
+            <i id="click" class="fas fa-bars"></i>
+            <li id="abc123" class=" an danh _2"><a href="#1">Band</a></li>
+            <li id="abc123" class=" an danh _3"><a href="#1">Tour</a></li>
+            <li id="abc123" class=" an danh _4"><a href="#1">Contact</a></li>
+            <li id="abc123" class=" an danh _5">
+                <a href="#1">More
+                    <i class="fas fa-sort-down"></i>
+                </a>
+                <ul class="subnav-more" style="background-color: lightblue;">
+                    <li><a href="#">Mechandise</a></li>
+                    <li><a href="#">Extras</a></li>
+                    <li><a href="#">Media</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="search">
+            <i class="fas fa-search"></i>
+        </div>
+    </div>
+
+    <!-- <script>
+        var a = 1;
+        var header = document.getElementById('header123');
+        // console.log(header);  console là điều khiển ra trình ở trình duyệt
+        var click = document.getElementById('click');
+        var headerHeight = header.clientHeight;
+        // console.log(click);
+        //var mobileMenu = document.getElementById('li>*="abc123"');
+        // console.log(mobileMenu);
+
+
+        // đóng mở mobile menu
+        click.onclick = function () {
+            // alert('Thông báo!!!!');
+            // console.log(header.clientHeight);
+            // var isClosed = header.clientHeight === headerHeight;
+            //console.log(isClosed);
+            // if (isClosed) {
+            //     header.style.height = 'auto';
+            // }
+            // else {
+            //     header.style.height = null;
+            // }
+            if(a == 1){
+                a = 2;
+                 document.getElementsById('abc123').style.setProperty('display', 'block');
+            } else {
+               
+            }
+        }
+        // tự đọng chọn menu
+        var menuItems = document.querySelectorAll();
+        //console.log(menuItems);
+        for (var i = 0; i < menuItems.length; i++) {
+            var menuItem = menuItems[i];
+            menuItem.onclick = function () {
+                header.style.height = null;
+            }
+        }
+  </script> -->
+    <!-- <script>
+        var a = 1 ;
+        var subClick = document.querySelectorAll('li a[href*="#1"] ');
+        console.log(subClick);
+        var click = document.getElementById('click');
+
+        // for (var i = 0; i < subClick.length; i++) {
+        //     var menuItem = subClick[i];
+        //     menuItem.onclick = function () {
+        //         header.style.height = null;
+        //     }
+        // }
+        click.onclick = function () {
+            if (a === 1) {
+                document.getElementsById('abc123').style.setProperty('display', 'block');
+                a=2;
+            }else{
+                document.getElementsById('abc123').setProperty('display', 'none');
+                a = 1;
+            }
+        }
+    </script> -->
+    <script>
+        // tự động khi chọn menu
+        var menuItems = document.querySelectorAll( '#nav li a[heft*="#"]' );
+        for (i=0 ; i<menuItems.length ; i++ ){
+           var menuItem = menuItems[i];
+           menuItem.onclick = function() {
+               var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+               if (isParentMenu){
+                   event.preventDefault();
+                }else{
+                   header.style.height = null;
+               }
+             
+           }
+
+        }
+          
+    </script>
+
+</body>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    li.d-5>a {
+        position: relative;
+    }
+
+    ul.subnav-more {
+        position: absolute;
+        list-style: none;
+        padding: 0;
+    }
+
+    ul.subnav-more>li>a {
+        text-decoration: none;
+        padding: 0 1.25em;
+        line-height: 2.5em;
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    ul.subnav-more>li {
+        min-width: 9.5em;
+        display: none;
+    }
+
+    .nav_header>li:hover>ul.subnav-more>li {
+        display: block;
+    }
+
+    .header {
+        background-color: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    /* .danh._1{
+        position: relative;
+    } */
+    .nav_header>i {
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 100;
+    }
+
+    .nav_header {
+        /* height: 2.9375em; */
+        margin: 0;
+        padding-inline-start: 0;
+    }
+
+    .nav_header>li:hover>a,
+    ul.subnav-more>li:hover>a,
+    .nav_header>i:hover {
+        background-color: #ccc;
+        color: black;
+        display: block;
+    }
+
+    .nav_header>li {
+        display: inline-block;
+    }
+
+    li.danh>a {
+        color: #fff;
+        text-transform: uppercase;
+        line-height: 2.9375em;
+        padding: 0 1.5em;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        /* display: block; */
+    }
+
+    .search {
+        padding: 0 1.5em;
+        line-height: 2.9375em;
+        float: right;
+        color: #fff;
+        position: fixed;
+        top: 0;
+        /* left: 100%; */
+        right: 0;
+    }
+
+    .nav_header>i {
+        display: none;
+    }
+
+    /* media mobile  */
+    @media only screen and (max-width:740px) {
+        .nav_header>li {
+            display: block;
+        }
+
+        .search {
+            display: none;
+        }
+
+        .nav_header>i {
+            color: #fff;
+            padding: 0 1.5em;
+            line-height: 2.9375em;
+            float: right;
+            display: block;
+            background-color: black;
+        }
+
+        .nav_header>.an {
+            display: none;
+        }
+
+        .nav_header>li {
+            display: block;
+        }
+
+        /* .nav_header {
+            height: 2.9375em;
+        } */
+
+    }
+</style>
+
+</html>

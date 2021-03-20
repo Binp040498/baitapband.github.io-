@@ -1,0 +1,74 @@
+/* css cho màn hình mobile */
+@media only screen and (max-width:740px)
+{
+    .menu:checked>i{
+        background-color: blue;
+    }
+    .header-content, .title-content{
+        display: none;
+    }
+    .anh_1234{
+        margin-bottom: -1px;
+    }
+    .nav>li{
+        overflow: hidden;
+    }
+    #merch{
+        /* display: block; */
+    }
+    li.anh_789{
+        background-color: black;
+        /* display: none; */
+        margin-bottom: -1px;
+    } 
+    li.subnav{
+        display: none !important ;
+    }
+    .nav .search {
+        display: none;
+    }
+    .header>.nav>li>a{
+        display: inline-block;
+    }
+    .header>.nav>li>a{
+        float: none;
+    }
+    .box-content-1 .box-nember-img{
+        flex-direction: column;
+
+    }
+    .nember-img-1{
+        width: 100%;
+    }
+    p.nember-name{
+        padding: 40px 0 15px 0;
+    }
+    .anh-98{
+        flex-direction: column;
+    }
+    .block-location{
+        width: 100%;
+    }
+    .box50{
+        width: 100%;
+        /* overflow: hidden; */
+    }
+    .display {
+        flex-direction: column;
+    }
+    .xyz_x_1 {
+        margin: 0;
+    }
+    .btn-full-width{
+        width: 100%;
+        /* appearance: none; */
+        /* -webkit-appearance: none; */
+    }
+    .abc_input_1{
+        width: 100%;
+    }
+    .align-padding{
+        /* margin: 0 12px; */
+        margin: 10px 0;
+    }
+}
